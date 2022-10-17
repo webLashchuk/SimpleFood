@@ -1,0 +1,122 @@
+body {
+    color: $dark;
+    font-size: 20px;
+    line-height: 1.3;
+    @extend %rubik-regular;
+    background-color: $silver-100;
+}
+
+button:focus {
+    outline: 2px solid $orange-900;
+}
+
+a {
+    transition: outline .7s, color .7s, text-shadow .7s;
+
+    &:focus {
+        border-radius: 5px;
+        outline: 2px solid $orange-900;
+    }
+
+    &:hover {
+        color: $orange-900;
+    }
+
+    &:active {
+        color: $darkBlue-900;
+        text-shadow: 2px 2px 5px $darkBlue-500;
+        outline: transparent;
+    }
+}
+
+.icon {
+    display: inline-block;
+    background-color: $darkBlue-900;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    transition: background-color .7s;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    width: 1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding-bottom: 120px;
+}
+
+.title {
+    font-size: 36px;
+    @extend %rubik-medium;
+    color: $darkBlue-900;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.button {
+    position: relative;
+    color: $primary-white;
+    background-color: $orange-900;
+    border-radius: 6px;
+    transition: background-color .7s, outline .7s, color .7s;
+
+    &:focus {
+        color: $orange-900;
+        background-color: $orange-100;
+    }
+
+    &:focus::before {
+        background-color: $orange-900;
+    }
+
+    &:hover {
+        color: $orange-900;
+        background-color: $primary-white;
+        outline: 2px solid $orange-900;
+    }
+
+    &:hover::before {
+        background-color: $orange-900;
+    }
+
+    &:active {
+        color: $orange-900;
+        background-color: $orange-100;
+        outline: transparent;
+    }
+
+    &:active::before {
+        background-color: $orange-900;
+    }
+}
+
+
+.more__link {
+    line-height: 1.5;
+    color: $darkBlue-900;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+    text-decoration-color: inherit;
+    transition: color .5s, outline .5s, text-shadow .5s, text-decoration-color .5s;
+}
