@@ -6,6 +6,7 @@ const autoprefixer   = require('gulp-autoprefixer');
 const uglify         = require('gulp-uglify');
 const imagemin       = require('gulp-imagemin');
 const svgSprite      = require('gulp-svg-sprite');
+const fileInclude    = require('gulp-file-include');
 const del            = require('del');
 const browserSync    = require('browser-sync').create();
 
@@ -49,6 +50,7 @@ function images() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
+        'node_modules/slick-carousel/slick/slick.js',
         'app/js/main.js'
     ])
         .pipe(concat('main.min.js'))
@@ -80,6 +82,16 @@ function svgSprites() {
         .pipe(dest('app/images'));
 }
 
+const htmlInclude = () => {
+    return src (['app/html/*.html'])
+    .pipe(fileInclude({
+        prefix: '@',
+        basepath: '@file',
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
+
 function cleanDist() {
     return del('dist')
 }
@@ -89,6 +101,7 @@ function watching() {
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/images/icons/*.svg'], svgSprites);
     watch(['app/**/*.html']).on('change', browserSync.reload);
+    watch(['app/html/**/*.html'], htmlInclude);
 }
 
 exports.styles = styles;
@@ -97,7 +110,8 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.svgSprites = svgSprites;
+exports.htmlInclude = htmlInclude;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);

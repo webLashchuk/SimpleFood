@@ -1,0 +1,93 @@
+.restaurants {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(345px, 370px));
+        justify-content: center;
+        grid-gap: 30px;
+        width: 100%;
+    }
+}
+
+.restaurant-card {
+    position: relative;
+    border-radius: 10px;
+    background-color: $primary-white;
+    box-shadow: 0px 3px 3px rgba($black, 0.1);
+    transition: box-shadow .7s;
+    
+    &:hover {
+        box-shadow: 0px 3px 15px rgba($orange-900, 0.5);
+    }
+
+    &__image {
+        background-image: url('../images/image-preview.png');
+        background-position: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px 20px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 400;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__time {
+        position: relative;
+        display: block;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+        padding-left: 32px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 22px;
+            height: 22px;
+            background-color: $dark;
+            mask-image: url('../images/sprite.svg#icon-time')
+        }
+    }
+
+    &__btn {
+        position: relative;
+        display: block;
+        min-width: 79px;
+        min-height: 33px;
+        border-radius: 20px;
+        line-height: 1;
+        transition: background-color .7s, outline .7s;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 11px;
+            width: 14px;
+            height: 12px;
+            background-color: $primary-white;
+            mask-image: url('../images/sprite.svg#icon-arrow-right');
+            transition: transform .7s;
+        }
+
+        &:focus {
+            border-radius: 20px;
+        }
+
+        &:hover::before {
+            position: absolute;
+            transform: translateX(90%);
+        }
+    }
+}

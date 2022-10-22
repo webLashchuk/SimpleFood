@@ -1,0 +1,197 @@
+.footer {
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+    }
+
+    &__offer {
+        margin-right: 70px;
+    }
+
+    &__rights {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1;
+        border-top: 1px solid $silver-200;
+        padding: 30px 10px;
+    }
+}
+
+.offer {
+    &__field {
+        display: block;
+        max-width: 200px;
+        font-size: 14px;
+        width: 100%;
+        background-color: $primary-white;
+        padding: 13px 15px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 1px $silver-200;
+        margin-bottom: 12px;
+        transition: outline .5s;
+
+        &::placeholder {
+            font-size: 14px;
+            color: $silver-200;
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 0px;
+            outline: 2px solid $orange-900;
+        }
+
+        &:hover::placeholder {
+            color: $darkBlue-900;
+            transition: color 1s;
+        }
+
+        &:active {
+            outline: transparent;
+            background-color: $primary-white;
+            box-shadow: 0px 0px 0px 0px;
+        }
+
+        &:active::placeholder {
+            color: $primary-white;
+            ;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        font-size: 14px;
+        padding: 13px 40px 13px 70px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            background-color: $primary-white;
+            mask-image: url('../images/sprite.svg#icon-telegram');
+            left: 40px;
+            top: 15px;
+            width: 17px;
+            height: 16px;
+            transition: background-color .7s;
+        }
+    }
+}
+
+.footer-menu {
+    display: grid;
+    max-width: 570px;
+    width: 100%;
+    grid-template-columns: 225px 160px 190px;
+    grid-row-gap: 20px;
+    align-content: flex-start;
+    font-size: 18px;
+    margin-right: 70px;
+    word-break: break-all;
+}
+
+.contacts {
+    font-size: 16px;
+    line-height: 1.7;
+    font-style: normal;
+
+    margin-right: 75px;
+    margin-bottom: 15px;
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            mask-size: auto;
+            background-color: $darkBlue-900;
+            transition: background-color .7s;
+        }
+
+        &--street {
+            &::before {
+                content: "";
+                mask-image: url('../images/sprite.svg#icon-location')
+            }
+        }
+
+        &--phone {
+            &::before {
+                content: "";
+                mask-image: url('../images/sprite.svg#icon-call')
+            }
+        }
+
+        &--email {
+            &::before {
+                content: "";
+                mask-image: url('../images/sprite.svg#icon-message')
+            }
+        }
+
+        &:hover::before {
+            background-color: $orange-900;
+        }
+    }
+}
+
+.social {
+    display: flex;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 13px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        width: 39px;
+        height: 39px;
+        background-color: $silver-200;
+        border-radius: 50%;
+        transition: background-color .5s, outline .5s;
+
+        &:focus {
+            background-color: rgba($orange-900, 0.1);
+            border-radius: 50%;
+        }
+
+        &:hover {
+            background-color: $orange-900;
+        }
+
+        &:active {
+            background-color: rgba($orange-900, 0.1);
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 39px;
+        height: 39px;
+        mask-size: 20px;
+        text-align: center;
+        background-color: $darkBlue-900;
+
+        &:hover {
+            background-color: $primary-white;
+        }
+
+        &:active {
+            background-color: $orange-900;
+        }
+    }
+}

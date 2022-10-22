@@ -1,0 +1,153 @@
+.header {
+    position: fixed;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $silver-100;
+    padding: 58px 20px;
+    transition: background-color .7s, padding .7s;
+
+    &__sticky {
+        position: fixed;
+        background-color: $silver-100;
+        z-index: 1;
+        padding: 10px 0;
+    }
+}
+
+.logo {
+    display: inline-block;
+    transition: opacity .5s, outline .5s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    &__footer {
+        margin-bottom: 25px;
+    }
+}
+
+.header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        margin: 0 50px 0 auto;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 45px;
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+
+        &--active {
+            color: $orange-900;
+        }
+    }
+}
+
+.header-actions {
+    display: flex;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+
+    &__button {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        border-radius: 5px;
+        transition: background-color 1s, outline .5s;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            width: 19px;
+            height: 19px;
+            background-color: $darkBlue-900;
+            transition: background-color .7s;
+        }
+
+        &--search {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-search');
+            }
+        }
+
+        &--cart {
+            position: relative;
+
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-cart');
+            }
+
+        }
+
+        &:focus {
+            background-color: rgba($orange-900, 0.1);
+        }
+
+        &:hover {
+            color: $orange-900;
+            background-color: $orange-900;
+        }
+
+        &:hover::before {
+            background-color: $primary-white;
+        }
+
+        &:hover::before,
+        &:hover>.header-actions__counter {
+            color: $orange-900;
+            background-color: $primary-white;
+        }
+
+        &:active {
+            outline: transparent;
+            background-color: rgba($orange-900, 0.1);
+        }
+
+        &:active::before {
+            background-color: $darkBlue-900;
+        }
+
+        &:active>.header-actions__counter {
+            color: $primary-white;
+            background-color: $orange-900;
+        }
+    }
+
+    &__counter {
+        position: absolute;
+        display: block;
+        min-width: 14px;
+        min-height: 14px;
+        font-size: 10px;
+        line-height: 1.5;
+        color: $primary-white;
+        background-color: $orange-900;
+        border-radius: 7px;
+        top: 7px;
+        left: 25px;
+        padding: 0 5px;
+        transition: background-color .7s, color .7s;
+    }
+}

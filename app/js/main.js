@@ -1,14 +1,33 @@
-$(function(){
+$(function () {
 
     $(window).scroll(function () {
         if ($(window).scrollTop() >= headerHeight) {
-            $('.header').addClass('sticky')
+            $('.header').addClass('header__sticky')
         } else {
-            $('.header').removeClass('sticky')
+            $('.header').removeClass('header__sticky')
         }
     });
 
     const headerHeight = $('.header').outerHeight();
 
-    let mixer = mixitup('.food');
-})
+    $('.reviews-slider').slick({
+        dots:true,
+        infinite: true
+    });
+
+    let mixer = mixitup('.food', {
+        controls: {
+            toggleDefault: 'none'
+        },
+        classNames: {
+            block: '',
+            elementFilter: 'category'
+        }
+    });
+
+
+    mixer.toggleOn('.category-burger');
+});
+
+
+

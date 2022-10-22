@@ -1,0 +1,200 @@
+.popular{
+    &__title {
+        margin-bottom: 60px;
+    }
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        color: $darkBlue-900;
+        background-color: $primary-white;
+        border: 1px solid $silver-200;
+        border-radius: 5px;
+        padding: 20px 30px 20px 86px;
+        transition: background-color .7s, outline .7s, color .7s, box-shadow .7s;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 32px;
+            top: 8px;
+            width: 44px;
+            height: 44px;
+            background-color: $darkBlue-900;
+            transition: background-color .7s;
+        }
+
+        &--burger {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-category-burger');
+            }
+        }
+
+        &--pizza {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-category-pizza');
+            }
+        }
+
+        &--sandwich {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-category-sandvich');
+            }
+        }
+
+        &--asia {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-category-asia');
+            }
+        }
+
+        &--sets {
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-category-dish');
+            }
+        }
+
+        &:focus {
+            color: $orange-900;
+            background-color: $primary-white;
+            outline: 2px solid $orange-900;
+        }
+
+        &:focus::before {
+            background-color: $orange-900;
+        }
+
+        &:hover {
+            color: $orange-900;
+            outline: 2px solid $orange-900;
+            background-color: rgba($orange-900, 0.1);
+        }
+
+        &:hover::before {
+            background-color: $orange-900;
+        }
+
+        &:active {
+            background-color: $primary-white;
+            box-shadow: inset 0px -5px 12px rgba($orange-900, 0.2);
+            ;
+            outline: transparent;
+            color: $darkBlue-900;
+        }
+
+        &:active::before {
+            background-color: $darkBlue-900;
+        }
+
+    }
+
+    &-active {
+        color: $primary-white;
+        background-color: $orange-900;
+        outline: transparent;
+
+        &::before {
+            background-color: $primary-white;
+        }
+    }
+}
+
+.food {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 210px);
+    grid-gap: 30px;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    &__button {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 6px;
+        color: $darkBlue-900;
+
+        &:hover {
+            text-decoration-color: transparent;
+            color: $orange-900;
+        }
+
+        &:active {
+            color: $darkBlue-900;
+            text-shadow: 2px 2px 5px rgba($darkBlue-900, 0.5);
+            outline: transparent;
+        }
+    }
+}
+
+.food-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content;
+    text-align: center;
+    width: 210px;
+    font-size: 15px;
+    line-height: 1;
+    background-color: $primary-white;
+    border: 1px solid $silver-200;
+    border-radius: 5px;
+    padding: 25px 15px 20px;
+    transition: box-shadow .7s;
+
+    &:hover {
+        box-shadow: 0px 0px 0px 1px $orange-900;
+    }
+
+    &__image {
+        display: inline-block;
+        background-image: url('../images/image-preview.png');
+        background-position: center;
+        margin-bottom: 5px;
+    }
+
+    &__link {
+        min-height: 186px;
+        margin-bottom: 10px;
+
+        &:focus {
+            outline: transparent;
+        }
+
+        &:hover {
+            color: $dark;
+        }
+    }
+
+    &__title {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.3;
+      @include line-clamp(2);
+    }
+
+    &__price {
+        line-height: 1.4;
+        font-weight: 500;
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+
+    &__currency {
+        font-weight: 400;
+    }
+
+    &__btn {
+        margin: 0 auto;
+        padding: 7px 14px;
+    }
+}

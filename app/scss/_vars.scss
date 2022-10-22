@@ -1,35 +1,30 @@
 $primary-white: #fff;
-$orange-100: rgba(255, 122, 80, 0.1);
-$orange-200: rgba(255, 104, 56, 0.2);
+$black: #000;
 $orange-900: #ff6838;
 $silver-100: #f9faff;
 $silver-200: #ececec;
 $gray: #c2c2c2;
-$darkBlue-500: rgba(54, 56, 83, 0.5);
 $darkBlue-900: #363853;
 $dark: #31352b;
+$blue: #00aaff;
+$red: #ff2222;
 
-%rubik-light {
-    font-family: 'Rubik-Light', sans-serif;
-    font-weight: 300;
-}
-
-%rubik-italic {
-    font-family: 'Rubik-Italic', sans-serif;
-    font-weight: 400;
-}
-
-%rubik-regular {
-    font-family: 'Rubik-Regular', sans-serif;
-    font-weight: 400;
-}
-
-%rubik-medium {
-    font-family: 'Rubik-Medium', sans-serif;
-    font-weight: 500;
-}
-
-%rubik-bold {
-    font-family: 'Rubik-Bold', sans-serif;
-    font-weight: 700;
-}
+@mixin line-clamp($lines: 1) {
+    @if $lines <=1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    } @else {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: $lines;
+      -webkit-box-orient: vertical;
+    }
+  }
+  
+//   // Использование миксина 
+//   .class{
+//     font-size: 14px;
+//       @include line-clamp(2);
+//   }
