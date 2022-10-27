@@ -5,16 +5,33 @@
         display: flex;
         justify-content: flex-end;
         align-content: center;
-        padding: 55px 70px;
+
+        @include mq('tablet') {
+            background-position: center;
+            justify-content: flex-start;
+        }
     }
 
     &__inner {
-        max-width: 470px;
+        max-width: 560px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content:center;
+        justify-content: center;
         text-align: left;
+        padding: 57px 90px 57px 20px;
+        background-color: rgba($silver-100, 0.85);
+
+        @include mq('tablet') {
+            font-size: 16px;
+            padding: 30px 70px 30px 20px;
+        }
+
+        @include mq('phone') {
+            max-width: 350px;
+            font-size: 16px;
+            padding: 25px 0;
+        }
     }
 
     &__caption {
@@ -25,15 +42,27 @@
     &__text {
         line-height: 1.5;
         margin-bottom: 30px;
+
+        @include mq('phone') {
+            margin-bottom: 34px;
+        }
     }
 
     &__list {
         margin-bottom: 30px;
+
+        @include mq('phone') {
+            margin-bottom: 20px;
+        }
     }
 
     &__item {
         &:not(:last-child) {
             margin-bottom: 20px;
+
+            @include mq('phone') {
+                margin-bottom: 23px;
+            }
         }
     }
 
@@ -44,6 +73,11 @@
         line-height: 1.5;
         color: $darkBlue-900;
         padding-left: 64px;
+
+        @include mq('tablet') {
+            font-size: 18px;
+            padding-left: 44px;
+        }
 
         &::before {
             content: "";
@@ -56,22 +90,21 @@
         }
 
         &--timer {
-            &::before{
-                content:"";
+            &::before {
                 mask-image: url('../images/sprite.svg#icon-timer');
                 background-color: $orange-900;
             }
         }
+
         &--delivery {
-            &::before{
-                content:"";
+            &::before {
                 mask-image: url('../images/sprite.svg#icon-delivery');
                 background-color: $blue;
             }
         }
+
         &--restaurant {
-            &::before{
-                content:"";
+            &::before {
                 mask-image: url('../images/sprite.svg#icon-restorant');
                 background-color: $red;
             }

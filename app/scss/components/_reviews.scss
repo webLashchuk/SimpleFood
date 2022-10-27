@@ -1,9 +1,146 @@
+.reviews {
+    @include mq('phone') {
+        padding-bottom: 10px;
+    }
+}
+
 .reviews-slider {
-    &__quote {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 52px;
+    position: relative;
+    padding-bottom: 30px;
+
+    &__controls {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 268px;
+        height: 40px;
+
+        @include mq('phone') {
+            top: 30px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            font-size: 0;
+            width: 40px;
+            height: 40px;
+            border: 3px solid $gray;
+            border-radius: 50%;
+            padding: 0;
+            cursor: pointer;
+            bottom: 0px;
+            transition: background-color .7s, border-color .7s, outline .7s;
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: $gray;
+                width: 18px;
+                height: 26px;
+                mask-repeat: no-repeat;
+                top: 9px;
+                transition: background-color .7s;
+            }
+
+            &:hover {
+                background-color: rgba($orange-900, 0.1);
+                border-color: rgba($orange-900, 0.7);
+            }
+
+            &:hover::before {
+                background-color: rgba($orange-900, 0.7);
+            }
+
+            &:active {
+                border-color: transparent;
+                outline: transparent;
+            }
+
+            &:active::before {
+                background-color: $orange-900;
+            }
+        }
+
+        & .slick-arrow.slick-prev {
+            left: 20px;
+
+            @include mq('phone') {
+                left: 0;
+            }
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-left');
+                left: 7px;
+            }
+        }
+
+        & .slick-arrow.slick-next {
+            right: 20px;
+
+            @include mq('phone') {
+                right: 0;
+            }
+
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-right');
+                left: 9px;
+            }
+
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+
+            li {
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+
+                button {
+                    font-size: 0;
+                    padding: 0;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $gray;
+                    border-radius: 50%;
+                    border: 2px solid transparent;
+                    transition: background-color .7s, border-color .7s, outline .7s;
+
+                    &:hover {
+                        background-color: rgba($orange-900, 0.1);
+                        border-color: rgba($orange-900, 0.7);
+                    }
+
+                    &:active {
+                        border-color: transparent;
+                        outline: transparent;
+                        background-color: rgba($orange-900, 0.7);
+                    }
+                }
+            }
+
+            .slick-active>button {
+                background-color: $orange-900;
+            }
+        }
+    }
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding-bottom: 52px;
+
+    @include mq('tablet-2') {
+        flex-direction: column;
+    }
+
+    @include mq('phone') {
+        padding-bottom: 0;
     }
 
     &__inner {
@@ -17,6 +154,17 @@
         border-radius: 50%;
         margin-right: 40px;
         object-fit: cover;
+
+        @include mq('tablet-2') {
+            max-width: 200px;
+            margin-right: 0;
+            margin-bottom: 25px;
+        }
+
+        @include mq('phone') {
+            max-width: 100px;
+            margin-right: 0;
+        }
     }
 
     &__blockquote {
@@ -25,6 +173,11 @@
         line-height: 1.5;
         padding: 5px 40px;
         margin-bottom: 25px;
+
+        @include mq('phone') {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
 
         &::before,
         &::after {
@@ -53,106 +206,14 @@
         color: $orange-900;
         margin-bottom: 5px;
         padding-left: 40px;
+
+        @include mq('phone') {
+            font-size: 16px;
+        }
     }
 
     &__rank {
         font-size: 14px;
         padding-left: 40px;
-    }
-
-    .slick-arrow {
-        position: absolute;
-        font-size: 0;
-        width: 40px;
-        height: 40px;
-        border: 3px solid $gray;
-        border-radius: 50%;
-        padding: 0;
-        cursor: pointer;
-        bottom: 0px;
-        transition: background-color .7s, border-color .7s, outline .7s;
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-color: $gray;
-            width: 18px;
-            height: 26px;
-            mask-repeat: no-repeat;
-            top: 9px;
-            transition: background-color .7s;
-        }
-
-        &:hover {
-            background-color: rgba($orange-900, 0.1);
-            border-color: rgba($orange-900, 0.7);
-        }
-
-        &:hover::before {
-            background-color: rgba($orange-900, 0.7);
-        }
-
-        &:active {
-            border-color: transparent;
-            outline: transparent;
-        }
-
-        &:active::before {
-            background-color: $orange-900;
-        }
-    }
-
-    & .slick-arrow.slick-prev {
-        left: 40.5%;
-
-        &::before {
-            mask-image: url('../images/sprite.svg#icon-left');
-            left: 7px;
-        }
-    }
-
-    & .slick-arrow.slick-next {
-        left: 56%;
-
-        &::before {
-            mask-image: url('../images/sprite.svg#icon-right');
-            left: 9px;
-        }
-
-    }
-
-    .slick-dots {
-        display: flex;
-        justify-content: center;
-        line-height: 32px;
-
-        li {
-            &:not(:last-child) {
-                margin-right: 15px;
-            }
-
-            button {
-                font-size: 0;
-                padding: 0;
-                background-color: transparent;
-                width: 15px;
-                height: 15px;
-                background-color: $gray;
-                border-radius: 50%;
-                border: 2px solid transparent;
-                transition: background-color .7s, border-color .7s, outline .7s;
-
-                &:hover {
-                    background-color: rgba($orange-900, 0.1);
-                    border-color: rgba($orange-900, 0.7);
-                }
-
-                &:active {
-                    border-color: transparent;
-                    outline: transparent;
-                    background-color: rgba($orange-900, 0.7);
-                }
-            }
-        }
     }
 }

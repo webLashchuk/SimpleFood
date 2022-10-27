@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     color: $dark;
     font-size: 20px;
@@ -5,10 +10,26 @@ body {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     background-color: $silver-100;
+    display: flex;
+    flex-direction: column;
+}
+
+body.lock {
+    @include mq('tablet') {
+        overflow: hidden;
+    }
+}
+
+.content {
+    flex-grow: 1;
 }
 
 button:focus {
     outline: 2px solid $orange-900;
+
+    @include mq('tablet') {
+        outline: transparent;
+    }
 }
 
 img {
@@ -17,6 +38,7 @@ img {
 
 a {
     transition: outline .7s, color .7s, text-shadow .7s;
+
 
     &:focus {
         border-radius: 5px;
@@ -30,6 +52,10 @@ a {
     &:active {
         color: $darkBlue-900;
         text-shadow: 2px 2px 5px rgba($darkBlue-900, 0.5);
+        outline: transparent;
+    }
+
+    @include mq('tablet') {
         outline: transparent;
     }
 }
@@ -68,6 +94,25 @@ a {
 
 .section {
     padding-bottom: 120px;
+
+    @include mq('desktop') {
+
+        padding-bottom: 100px;
+    }
+
+    @include mq('tablet-2') {
+
+        padding-bottom: 60px;
+    }
+
+    @include mq('tablet') {
+
+            padding-bottom: 40px;
+        }
+
+    // @include mq('phone') {
+    //     padding-bottom: 65px;
+    // }
 }
 
 .title,
@@ -77,6 +122,14 @@ features__caption {
     color: $darkBlue-900;
     text-align: center;
     margin-bottom: 45px;
+
+    @include mq('tablet') {
+        font-size: 28px;
+    }
+    @include mq('phone') {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
 }
 
 .button {

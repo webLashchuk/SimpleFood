@@ -7,18 +7,37 @@
     background-color: $silver-100;
     padding: 58px 20px;
     transition: background-color .7s, padding .7s;
+    z-index: 3;
+
+    @include mq('tablet') {
+        padding: 24px 0;
+    }
+
+    @include mq('phone') {
+        padding: 15px 0;
+    }
 
     &__sticky {
         position: fixed;
         background-color: $silver-100;
         z-index: 1;
+        box-shadow: 0px 0px 5px 0px $dark;
         padding: 10px 0;
+        z-index: 3;
     }
 }
 
 .logo {
     display: inline-block;
     transition: opacity .5s, outline .5s;
+
+    @include mq('tablet') {
+        max-width: 150px;
+    }
+
+    @include mq('phone') {
+        max-width: 115px;
+    }
 
     &:hover {
         opacity: 0.8;
@@ -30,8 +49,17 @@
 
     &__footer {
         margin-bottom: 25px;
+
+        @include mq('tablet') {
+            min-width: 200px;
+            height: 39px;
+        }
+    
     }
+
 }
+
+
 
 .header-menu {
     display: flex;
@@ -42,6 +70,20 @@
     &__list {
         display: flex;
         margin: 0 50px 0 auto;
+
+        @include mq('tablet') {
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 75px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            z-index: 2;
+            padding: 100px 0 10px;
+            transform: translateX(-200%);
+        }
     }
 
     &__item {
@@ -59,8 +101,13 @@
     }
 }
 
+
 .header-actions {
     display: flex;
+
+    @include mq('tablet') {
+        margin: 0 14px 0 auto;
+    }
 
     &__item {
         &:not(:last-child) {
@@ -150,4 +197,53 @@
         padding: 0 5px;
         transition: background-color .7s, color .7s;
     }
+}
+
+.burger-btn {
+    display: none;
+    
+    position: relative;
+    color: $darkBlue-900;
+    margin-right: 10px;
+    z-index: 3;
+
+    &--open {
+        width: 30px;
+        height: 20px;
+    }
+
+    @include mq('tablet') {
+        display: block;
+    }
+
+    &__line {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: $darkBlue-900;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $darkBlue-900;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        top: calc(100% - 2px);
+    }
+
 }
