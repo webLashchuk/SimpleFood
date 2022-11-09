@@ -158,6 +158,7 @@
 
 .food {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(auto-fit, 210px);
     grid-template-rows: 1fr;
     grid-gap: 30px;

@@ -5,15 +5,22 @@
 
     &__wrapper {
         display: flex;
-        // padding: 45px 0 35px;
         background-position: right;
-        
+
     }
 
     &__inner {
         max-width: 540px;
         background-color: rgba($silver-100, 0.85);
         padding: 45px 0 33px;
+
+        &--bg-color {
+            background-color: rgba($menu-bg, 0.85);
+        }
+
+        @include mq('tablet') {
+            background-color: rgba($silver-100, 0.85);
+        }
 
         @include mq('phone') {
             width: 100%;

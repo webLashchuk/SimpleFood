@@ -1,0 +1,81 @@
+.promotions {
+    position: relative;
+    padding-bottom: 115px;
+
+    @include mq('tablet') {
+        padding-bottom: 90px;
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 60px;
+
+        @include mq('tablet') {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__controls-dots {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 268px;
+        height: 40px;
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+
+            button {
+                font-size: 0;
+                padding: 0;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
+                background-color: $gray;
+                border-radius: 50%;
+                border: 2px solid transparent;
+                transition: background-color .7s, border-color .7s, outline .7s;
+
+                &:hover {
+                    background-color: rgba($orange-900, 0.1);
+                    border-color: rgba($orange-900, 0.7);
+                }
+
+                &:active {
+                    border-color: transparent;
+                    outline: transparent;
+                    background-color: rgba($orange-900, 0.7);
+                }
+            }
+        }
+
+        .slick-active>button {
+            background-color: $orange-900;
+        }
+    }
+}
+
+.restaurant-card {
+    &__text {
+        font-size: 24px;
+    }
+}

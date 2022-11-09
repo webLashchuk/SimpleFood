@@ -20,6 +20,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^2.0.0",
     "gulp-uglify": "^3.0.2",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.6.1",
     "mixitup": "^3.3.1",
     "node-sass-tilde-importer": "^1.0.2",

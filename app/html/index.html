@@ -1,25 +1,27 @@
-@include('components/_head.html')
+@include('components/main/_head.html', {
+    "pageTitle": "Главная страница"
+})
 
-@include('components/_header.html')
-
-@include('components/_mobile-menu.html')
+@include('components/main/_header.html', {
+    "activeClassMain": "header-menu__link--active"
+})
 
 <main class="content">
 
-    @include('components/_hero.html')
+    @include('components/main/_hero.html')
 
-    @include('components/_popular.html')
+    @include('components/main/_popular.html')
 
-    @include('components/_features.html')
+    @include('components/main/_features.html')
 
-    @include('components/_restaurants.html')
+    @include('components/main/_restaurants.html')
 
-    @include('components/_reviews.html')
+    @include('components/main/_reviews.html')
 
-    @include('components/_app.html')
+    @include('components/main/_app.html')
 
 </main>
 
-@include('components/_footer.html')
+@include('components/main/_footer.html')
 
-@include('components/_footer-scripts.html')
+@include('components/main/_footer-scripts.html')

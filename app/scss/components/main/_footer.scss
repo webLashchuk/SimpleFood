@@ -10,6 +10,7 @@
 
         @include mq('phone') {
             flex-direction: column;
+            margin-bottom: 5px;
         }
     }
 
@@ -23,6 +24,18 @@
         line-height: 1;
         border-top: 1px solid $silver-200;
         padding: 30px 10px;
+    }
+
+    &__catalog {
+        background-color: $menu-bg;
+
+        @include mq('tablet') {
+            background-color: $silver-100;
+        }
+    }
+
+    &__rights {
+        background-color: $silver-100;
     }
 }
 
@@ -232,3 +245,4 @@
         }
     }
 }
+

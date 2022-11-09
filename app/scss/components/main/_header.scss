@@ -7,7 +7,7 @@
     background-color: $silver-100;
     padding: 58px 20px;
     transition: background-color .7s, padding .7s;
-    z-index: 3;
+    z-index: 5;
 
     @include mq('tablet') {
         padding: 24px 0;
@@ -23,7 +23,7 @@
         z-index: 1;
         box-shadow: 0px 0px 5px 0px $dark;
         padding: 10px 0;
-        z-index: 3;
+        z-index: 5;
     }
 }
 
@@ -54,9 +54,7 @@
             min-width: 200px;
             height: 39px;
         }
-    
     }
-
 }
 
 
@@ -150,6 +148,7 @@
 
         &:focus {
             background-color: rgba($orange-900, 0.1);
+            outline: 2px solid $orange-900;
         }
 
         &:hover {
