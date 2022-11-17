@@ -14,7 +14,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Доставка еды SimpleFood | Каталог</title>
-    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -141,16 +140,18 @@
 
 <main class="content catalog-bg">
 
+    <h1 class="visually-hidden">Каталог еды Simple Food</h1>
+
     <section class="menu">
 
     <div class="breadcrumbs">
         <div class="container">
             <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="#">Главная</a>
+                    <a class="link breadcrumbs__link" href="#">Главная</a>
                 </li>
                 <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="#">Каталог товаров</a>
+                    <span class="breadcrumbs__link" href="#">Каталог товаров</span>
                 </li>
             </ul>
         </div>
@@ -160,11 +161,15 @@
         <header class="menu__top">
             <h2 class="title menu__title">Каталог продуктов</h2>
             <div class="menu__top-filter">
-                <button class="filter-btn filter-btn--open">
+                <h3 class="visually-hidden">Меню сортировки продуктов</h3>
+                <button class="sidebar-btn sidebar-btn--open">
                     <span class="visually-hidden">Открыть меню</span>
                 </button>
                 <div class="dropdown">
-                    <button class="dropdown__button dropdown__button--name">По названию</button>
+                    <button class="dropdown__button dropdown__button--name">
+                        <span class="visually-hidden">Открыть фильтр</span>
+                        По названию
+                    </button>
                     <ul class="dropdown__list">
                         <li class="dropdown__item" data-value="name">По названию</li>
                         <li class="dropdown__item" data-value="price">По цене</li>
@@ -176,7 +181,10 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropdown__button dropdown__button--number">по 12</button>
+                    <button class="dropdown__button dropdown__button--number">
+                        <span class="visually-hidden">Открыть фильтр</span>
+                        по 12
+                    </button>
                     <ul class="dropdown__list">
                         <li class="dropdown__item" data-value="12">по 12</li>
                         <li class="dropdown__item" data-value="10">по 10</li>
@@ -212,53 +220,54 @@
 
         <div class="menu__inner">
 
-            <aside class="filters">
+            <div class="sidebar">
+                <h2 class="visually-hidden">Фильтры поиска блюд</h2>
                 <div class="overlay"></div>
-                <div class="filters__inner">
-                    <button class="filter-btn filter-btn--close">
+                <div class="sidebar__inner">
+                    <button class="sidebar-btn sidebar-btn--close">
                         <span class="visually-hidden">Закрыть меню</span>
                     </button>
-                    <div class="filters__wrapper">
-                        <h3 class="filters__title">Категории</h3>
+                    <div class="sidebar__wrapper">
+                        <h3 class="sidebar__title">Категории</h3>
 
-                        <ul class="filters__category-list">
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                        <ul class="category-filter">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Бургеры
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Пицца
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Сендвичи
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Азиатская кухня
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Сеты
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Европейская кухня
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Напитки
                                 </a>
                             </li>
-                            <li class="filters__category-item">
-                                <a class="link filters__category-link" href="#">
+                            <li class="category-filter__item">
+                                <a class="link category__link" href="#">
                                     Алкоголь
                                 </a>
                             </li>
@@ -266,50 +275,54 @@
 
                     </div>
 
-                    <div class="filters__wrapper">
-                        <h3 class="filters__title">Предложения</h3>
-                        <form class="filters__offer-form" action="#">
-                            <ul class="filters__offer-list">
-                                <li class="filters__offer-item">
-                                    <input class="filters__offer-checkbox" type="checkbox" id="discount"
-                                        name="discount">
-                                    <label class="filters__offer-label" for="discount">Со скидкой</label>
+                    <div class="sidebar__wrapper">
+                        <h3 class="sidebar__title">Предложения</h3>
+                        <form class="offer-filter" action="#">
+                            <ul class="offer-filter__list">
+                                <li class="offer-filter__item">
+                                    <input class="offer-filter__checkbox" type="checkbox" id="discount" name="discount">
+                                    <label class="offer-filter__label" for="discount">Со скидкой</label>
                                 </li>
-                                <li class="filters__offer-item">
-                                    <input class="filters__offer-checkbox" type="checkbox" id="new" name="discount"
+                                <li class="offer-filter__item">
+                                    <input class="offer-filter__checkbox" type="checkbox" id="new" name="discount"
                                         checked>
-                                    <label class="filters__offer-label" for="new">Новинка</label>
+                                    <label class="offer-filter__label" for="new">Новинка</label>
                                 </li>
-                                <li class="filters__offer-item">
-                                    <input class="filters__offer-checkbox" type="checkbox" id="hit" name="discount">
-                                    <label class="filters__offer-label" for="hit">Хит</label>
+                                <li class="offer-filter__item">
+                                    <input class="offer-filter__checkbox" type="checkbox" id="hit" name="discount">
+                                    <label class="offer-filter__label" for="hit">Хит</label>
                                 </li>
                             </ul>
                         </form>
                     </div>
 
-                    <div class="filters__wrapper">
-                        <h3 class="filters__title">Цена</h3>
-                        <div class="filters__price-inner">
-                            <form class="filters__price-form" action="#">
-                                <div class="filters__price-fields">
-                                    <div class="filters__price-wrapper filters__price-wrapper--from">
-                                        <input class="filters__price-field filters__price-field--from" type="text"
-                                            value="0">
+                    <div class="sidebar__wrapper">
+                        <h3 class="sidebar__title">Цена</h3>
+
+                        <div class="price-range">
+                            <form class="price-range__form" action="#">
+                                <div class="price-range__fields">
+                                    <div class="price-range__wrapper price-range__wrapper--from">
+                                        <label class="price-range__label" for="from"></label>
+                                        <input class="price-range__field price-range__field--from" id="from"
+                                            type="number" value="0">
                                     </div>
-                                    <div class="filters__price-wrapper filters__price-wrapper--to">
-                                        <input class="filters__price-field filters__price-field--to" type="text"
+                                    <div class="price-range__wrapper price-range__wrapper--to">
+                                        <label class="price-range__label" for="to"></label>
+                                        <input class="price-range__field price-range__field--to" id type="number"
                                             value="0">
                                     </div>
                                 </div>
-                                <div class="filters__price-item">
-                                    <input class="filters__price-slider" type="text">
+                                <div class="price-range__item">
+                                    <label class="price-range__label" for="range-line"></label>
+                                    <input class="price-range__slider" id="range-line" type="text">
                                 </div>
                             </form>
                         </div>
                     </div>
+
                 </div>
-            </aside>
+            </div>
 
             <div class="menu__content">
 
@@ -533,7 +546,7 @@
     <section class="section app">
     <div class="container">
         <div class="bg-properties app__wrapper" style="background-image:url('images/app-bg.jpg')">
-            <div class="app__inner app__inner--bg-color">
+            <div class="app__inner app__inner--catalog-bg">
                 <h2 class="title app__title">Скачайте мобильное приложение</h2>
                 <div class="app__text">
                     <p>Рестораны, которые вы любите - в ваших руках. Устанавливайте приложение и заказывайте еду
@@ -605,7 +618,7 @@
 
 </main>
 
-<footer class="footer footer__catalog">
+<footer class="footer catalog-bg">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__offer">
@@ -734,7 +747,7 @@
     </div>
 </footer>
 
-<script src="js/mixitup.min.js"></script>
+<!-- <script src="js/mixitup.min.js"></script> -->
 <script src="js/main.min.js"></script>
 </body>
 </html>

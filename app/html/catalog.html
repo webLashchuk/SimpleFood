@@ -8,10 +8,12 @@
 
 <main class="content catalog-bg">
 
+    <h1 class="visually-hidden">Каталог еды Simple Food</h1>
+
     @include('components/catalog/_menu.html')
 
     @include('components/main/_app.html', {
-        "sectionBg": "app__inner--bg-color",
+        "sectionBg": "app__inner--catalog-bg",
     })
 
     @include('components/catalog/_promotions.html')
@@ -19,7 +21,7 @@
 </main>
 
 @include('components/main/_footer.html', {
-    "sectionBg": "footer__catalog"
+    "sectionBg": "catalog-bg"
 })
 
 @include('components/main/_footer-scripts.html')

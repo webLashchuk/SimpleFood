@@ -26,14 +26,6 @@
         padding: 30px 10px;
     }
 
-    &__catalog {
-        background-color: $menu-bg;
-
-        @include mq('tablet') {
-            background-color: $silver-100;
-        }
-    }
-
     &__rights {
         background-color: $silver-100;
     }
@@ -43,7 +35,7 @@
     @include mq('desktop') {
         margin-bottom: 30px;
     }
-    
+
     &__field {
         display: block;
         max-width: 200px;
@@ -106,7 +98,6 @@
 }
 
 .footer-menu {
-    // order: 2;
     display: grid;
     grid-template-columns: 225px 160px 190px;
     grid-template-rows: repeat(4, 25px);
@@ -245,4 +236,3 @@
         }
     }
 }
-

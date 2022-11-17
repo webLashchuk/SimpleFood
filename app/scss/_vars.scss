@@ -11,7 +11,10 @@ $blue: #00aaff;
 $red: #ff2222;
 $filter-bg: #faeded;
 $menu-bg: #eeeff0;
-
+$gray-200: #e4e4e4;
+$dark-brown: #505050;
+$gray-100: #c1c1c1;
+$star: #ffb800;
 
 $breakpoints: (
   "phone": 560px,
@@ -44,5 +47,15 @@ $breakpoints: (
       -webkit-line-clamp: $lines;
       -webkit-box-orient: vertical;
     }
+  }
+
+  %link-more {
+    line-height: 1.5;
+    color: $darkBlue-900;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+    text-decoration-color: inherit;
+    transition: color .5s, outline .5s, text-shadow .5s, text-decoration-color .5s;
   }
   

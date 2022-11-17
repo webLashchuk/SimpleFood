@@ -1,14 +1,14 @@
 const { src, dest, watch, parallel, series } = require('gulp');
 
-const scss           = require('gulp-sass')(require('sass'));
-const concat         = require('gulp-concat');
-const autoprefixer   = require('gulp-autoprefixer');
-const uglify         = require('gulp-uglify');
-const imagemin       = require('gulp-imagemin');
-const svgSprite      = require('gulp-svg-sprite');
-const fileInclude    = require('gulp-file-include');
-const del            = require('del');
-const browserSync    = require('browser-sync').create();
+const scss = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const svgSprite = require('gulp-svg-sprite');
+const fileInclude = require('gulp-file-include');
+const del = require('del');
+const browserSync = require('browser-sync').create();
 
 function browsersync() {
     browserSync.init({
@@ -50,9 +50,14 @@ function images() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
+        'node_modules/rateyo/src/jquery.rateyo.js',
+        'node_modules/mixitup/dist/mixitup.js',
         'node_modules/slick-carousel/slick/slick.js',
         'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
-        'app/js/main.js'
+        'node_modules/swiper/swiper-bundle.js',
+        'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+        'app/js/main.js',
     ])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
@@ -63,7 +68,7 @@ function scripts() {
 function build() {
     return src([
         'app/**/*.html',
-        'app/css/style.css',
+        'app/css/style.min.css',
         'app/js/main.min.js'
     ], { base: 'app' })
         .pipe(dest('dist'))
@@ -84,13 +89,13 @@ function svgSprites() {
 }
 
 const htmlInclude = () => {
-    return src (['app/html/*.html'])
-    .pipe(fileInclude({
-        prefix: '@',
-        basepath: '@file',
-    }))
-    .pipe(dest('app'))
-    .pipe(browserSync.stream());
+    return src(['app/html/*.html'])
+        .pipe(fileInclude({
+            prefix: '@',
+            basepath: '@file',
+        }))
+        .pipe(dest('app'))
+        .pipe(browserSync.stream());
 }
 
 function cleanDist() {

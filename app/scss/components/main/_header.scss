@@ -7,7 +7,7 @@
     background-color: $silver-100;
     padding: 58px 20px;
     transition: background-color .7s, padding .7s;
-    z-index: 5;
+    z-index: 6;
 
     @include mq('tablet') {
         padding: 24px 0;

@@ -1,0 +1,20 @@
+@include('components/main/_head.html', {
+    "pageTitle": "Чизбургер с листьями салата в Simple Food"
+})
+
+@include('components/main/_header.html', {
+    "activeClassDish": "header-menu__link--active"
+})
+
+<main class="content">
+    <h1 class="visually-hidden">Cтраница выбора еды Simple Food</h1>
+
+    @include('components/product/_product.html')
+
+    @include('components/product/_related-products.html')
+    
+</main>
+
+@include('components/main/_footer.html')
+
+@include('components/main/_footer-scripts.html')

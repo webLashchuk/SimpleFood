@@ -87,6 +87,7 @@
     }
 
     &__link {
+        @extend %link-more;
         &:focus {
             text-decoration-color: transparent;
         }
