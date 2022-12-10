@@ -92,6 +92,10 @@
             display: flex;
             justify-content: center;
 
+            @include mq('phone') {
+                display: none;
+            }
+
             li {
                 &:not(:last-child) {
                     margin-right: 15px;
