@@ -117,6 +117,10 @@
                     border: 2px solid transparent;
                     transition: background-color .7s, border-color .7s, outline .7s;
 
+                    @include mq('phone') {
+                        display: none;
+                    }
+
                     &:hover {
                         background-color: rgba($orange-900, 0.1);
                         border-color: rgba($orange-900, 0.7);
