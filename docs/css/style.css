@@ -3775,6 +3775,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: -ms-flexbox;
   display: flex;
 }
+@media only screen and (max-width: 559px) {
+  .hero__wrapper {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(249, 250, 255, 0.85);
+            box-shadow: inset 0 0 0 2000px rgba(249, 250, 255, 0.85);
+  }
+}
 .hero__inner {
   max-width: 450px;
   margin-right: auto;
@@ -3807,6 +3813,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 @media only screen and (max-width: 559px) {
   .hero__inner {
+    background-color: transparent;
     padding: 25px 0;
     max-width: 345px;
   }
@@ -3903,6 +3910,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     margin-left: 0;
   }
 }
+@media only screen and (max-width: 559px) {
+  .category {
+    margin-bottom: 5px;
+  }
+}
 .category__item:not(:last-child) {
   margin-right: 10px;
 }
@@ -3934,6 +3946,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   .category__btn {
     font-size: 14px;
     padding: 12px 15px 12px 41px;
+    margin-bottom: 15px;
   }
 }
 .category__btn::before {
@@ -4477,6 +4490,12 @@ body:not(.is-using-mouse) .fancybox__container :focus {
             justify-content: flex-start;
   }
 }
+@media only screen and (max-width: 559px) {
+  .features__wrapper {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(249, 250, 255, 0.85);
+            box-shadow: inset 0 0 0 2000px rgba(249, 250, 255, 0.85);
+  }
+}
 .features__inner {
   max-width: 560px;
   display: -webkit-box;
@@ -4505,6 +4524,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 @media only screen and (max-width: 559px) {
   .features__inner {
     max-width: 350px;
+    background-color: transparent;
     font-size: 16px;
     padding: 25px 0;
   }

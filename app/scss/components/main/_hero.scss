@@ -17,6 +17,10 @@
         position: relative;
         background-position: right;
         display: flex;
+
+        @include mq('phone') {
+            box-shadow: inset 0 0 0 2000px rgba($silver-100, 0.85);
+        }
     }
 
     &__inner {
@@ -41,6 +45,7 @@
         }
 
         @include mq('phone') {
+            background-color: transparent;
             padding: 25px 0;
             max-width: 345px;
         }
