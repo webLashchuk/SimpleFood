@@ -98,6 +98,10 @@
             }
 
             li {
+                @include mq('phone') {
+                    display: none;
+                }
+                
                 &:not(:last-child) {
                     margin-right: 15px;
                 }
