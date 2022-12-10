@@ -4873,6 +4873,15 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media only screen and (max-width: 559px) {
+  .reviews-slider__controls .slick-dots {
+    opacity: 0;
+  }
 }
 .reviews-slider__controls .slick-dots li:not(:last-child) {
   margin-right: 15px;
