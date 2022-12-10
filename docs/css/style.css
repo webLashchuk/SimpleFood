@@ -4880,6 +4880,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 @media only screen and (max-width: 559px) {
   .reviews-slider__controls .slick-dots {
+    z-index: -1;
     display: none;
   }
 }
