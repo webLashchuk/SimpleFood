@@ -91,9 +91,10 @@
         .slick-dots {
             display: flex;
             justify-content: center;
+            flex-direction: row;
 
             @include mq('phone') {
-                display: none;
+                opacity: 0;
             }
 
             li {
