@@ -1,0 +1,109 @@
+.hero {
+    padding-top: 160px;
+
+    @include mq('tablet') {
+        padding-top: 100px;
+
+        &.section {
+            padding-bottom: 41px;
+        }
+    }
+
+    @include mq('phone') {
+        padding-top: 75px;
+    }
+
+    &__wrapper {
+        position: relative;
+        background-position: right;
+        display: flex;
+    }
+
+    &__inner {
+        max-width: 450px;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: auto 0;
+        z-index: 1;
+        background-color: rgba($silver-100, 0.85);
+        padding: 155px 0;
+
+        @include mq('tablet-2') {
+            padding: 120px 20px 120px 0;
+        }
+
+        @include mq('tablet') {
+            padding: 70px 20px 70px 0;
+            font-size: 16px;
+        }
+
+        @include mq('phone') {
+            padding: 25px 0;
+            max-width: 345px;
+        }
+    }
+
+    &__caption {
+        display: block;
+        font-size: 66px;
+        color: $darkBlue-900;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+
+        &--orange {
+            color: $orange-900;
+        }
+
+        @include mq('tablet-2') {
+            font-size: 54px;
+        }
+
+        @include mq('phone') {
+            font-size: 40px;
+        }
+    }
+
+    &__text {
+        line-height: 1.5;
+        margin-bottom: 20px;
+
+        @include mq('tablet-2') {
+            margin-bottom: 19px;
+        }
+    }
+
+    &__btn {
+        padding: 12px 30px;
+        margin-right: 35px;
+
+        @include mq('phone') {
+            padding: 8px 25px;
+            font-size: 14px;
+        }
+    }
+
+    &__link {
+        @extend %link-more;
+        &:focus {
+            text-decoration-color: transparent;
+        }
+
+        &:hover {
+            text-decoration-color: transparent;
+        }
+
+        &--underline {
+            &:focus {
+                text-decoration-color: $darkBlue-900;
+            }
+
+            &:active {
+                text-decoration-color: transparent;
+            }
+        }
+    }
+}

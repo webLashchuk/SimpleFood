@@ -1,0 +1,27 @@
+@include('components/main/_head.html', {
+    "pageTitle": "Каталог"
+})
+
+@include('components/main/_header.html', {
+    "activeClassDish": "header-menu__link--active"
+})
+
+<main class="content catalog-bg">
+
+    <h1 class="visually-hidden">Каталог еды Simple Food</h1>
+
+    @include('components/catalog/_menu.html')
+
+    @include('components/main/_app.html', {
+        "sectionBg": "app__inner--catalog-bg",
+    })
+
+    @include('components/catalog/_promotions.html')
+
+</main>
+
+@include('components/main/_footer.html', {
+    "sectionBg": "catalog-bg"
+})
+
+@include('components/main/_footer-scripts.html')

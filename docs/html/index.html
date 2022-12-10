@@ -1,0 +1,27 @@
+@include('components/main/_head.html', {
+    "pageTitle": "Главная страница"
+})
+
+@include('components/main/_header.html', {
+    "activeClassMain": "header-menu__link--active"
+})
+
+<main class="content">
+
+    @include('components/main/_hero.html')
+
+    @include('components/main/_popular.html')
+
+    @include('components/main/_features.html')
+
+    @include('components/main/_restaurants.html')
+
+    @include('components/main/_reviews.html')
+
+    @include('components/main/_app.html')
+
+</main>
+
+@include('components/main/_footer.html')
+
+@include('components/main/_footer-scripts.html')

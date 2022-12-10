@@ -1,0 +1,38 @@
+.breadcrumbs {
+    width: 100%;
+    font-size: 14px;
+    background-color: rgba($orange-900, 0.1);
+    padding: 24px 0;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            padding-right: 17px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 25px;
+                width: 10px;
+                mask-image: url('../images/sprite.svg#icon-right');
+                background-color: $gray;
+                mask-repeat: no-repeat;
+                right: 3px;
+                top: 4px;
+            }
+        }
+
+        @include mq('tablet') {
+            display: none;
+            &:first-child,
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+}

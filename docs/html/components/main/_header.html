@@ -1,0 +1,119 @@
+<header class="header">
+    <div class="container">
+
+        <nav class="header-menu">
+            <a class="logo" href="#">
+                <img class="logo__img" src="images/logo.svg" alt="Логотип компании SimpleFood" width="200" height="39">
+            </a>
+
+            <ul class="header-menu__list">
+                <li class="header-menu__item">
+                    <a class="link header-menu__link @activeClassMain" href="#">Главная</a>
+                </li>
+                <li class="header-menu__item">
+                    <a class="link header-menu__link @activeClassDish" href="#">Блюда</a>
+                </li>
+                <li class="header-menu__item">
+                    <a class="link header-menu__link" href="#">Контакты</a>
+                </li>
+            </ul>
+
+            <ul class="header-actions">
+                <li class="header-actions__item">
+                    <button class="header-actions__button header-actions__button--search" type="button">
+                        <span class="visually-hidden">Искать блюдо</span>
+                    </button>
+                </li>
+                <li class="header-actions__item">
+                    <button class="header-actions__button header-actions__button--cart" type="button">
+                        <span class="visually-hidden">Показать заказы в корзине</span>
+                        <span class="header-actions__counter">
+                            <span class="visually-hidden">Товаров в корзине</span>
+                            4
+                        </span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="burger-btn burger-btn--open" type="button">
+                <span class="burger-btn__line"></span>
+                <span class="visually-hidden">Открыть меню</span>
+            </button>
+        </nav>
+
+        <div class="mobile-menu">
+            <div class="overlay"></div>
+            <div class="mobile-menu__inner">
+
+
+                <div class="mobile-menu__item">
+                    <a class="logo__menu" href="#">
+                        <img class="logo__img" src="images/logo.svg" alt="Логотип компании SimpleFood" width="200"
+                            height="39">
+                    </a>
+                    <button class="burger-btn burger-btn--close" type="button">
+                        <span class="visually-hidden">Закрыть меню</span>
+                    </button>
+                </div>
+
+                <div class="mobile-menu__item">
+                    <ul class="burger-menu">
+                        <li class="burger-menu__item">
+                            <a class="header-menu__link @activeClassMain" href="#">Главная</a>
+                        </li>
+                        <li class="burger-menu__item">
+                            <a class="header-menu__link @activeClassDish" href="#">Блюда</a>
+                        </li>
+                        <li class="burger-menu__item">
+                            <a class="header-menu__link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu__item">
+                    <address class="contacts">
+                        <ul class="contacts__list">
+                            <li class="contacts__item">
+                                <a class="contacts__link contacts__link--street" href="#">ул. Шевченко, 1</a>
+                            </li>
+                            <li class="contacts__item">
+                                <a class="contacts__link contacts__link--phone" href="tel:380501112233">380501112233</a>
+                            </li>
+                            <li class="contacts__item">
+                                <a class="contacts__link contacts__link--email"
+                                    href="mailto:support@sfood.com">support@sfood.com</a>
+                            </li>
+                        </ul>
+
+                        <ul class="social">
+                            <li class="social__item">
+                                <a href="#" class="social__link">
+                                    <span class="visually-hidden">Перейти в фейсбук</span>
+                                    <span class="icon social__icon"
+                                        style="-webkit-mask-image: url(images/sprite.svg#icon-facebook);"></span>
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="#" class="social__link">
+                                    <span class="visually-hidden">Перейти в твиттер</span>
+                                    <span class="icon social__icon"
+                                        style="-webkit-mask-image: url(images/sprite.svg#icon-twitter);"></span>
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a href="#" class="social__link">
+                                    <span class="visually-hidden">Перейти в инстаграм</span>
+                                    <span class="icon social__icon"
+                                        style="-webkit-mask-image: url(images/sprite.svg#icon-instagram);"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

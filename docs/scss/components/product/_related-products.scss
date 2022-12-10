@@ -1,0 +1,136 @@
+.related-products {
+    position: relative;
+    width: 100%;
+    padding-bottom: 45px;
+
+    @include mq('tablet') {
+        padding-bottom: 30px;
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 50px;
+
+        @include mq('tablet') {
+            margin-bottom: 25px;
+        }
+
+        @include mq('phone') {
+            font-size: 20px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        padding: 2px;
+
+        @include mq('tablet') {
+            padding-bottom: 50px;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border: 3px solid $gray;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background-color .7s, border-color .7s, outline .7s;
+
+        @include mq('tablet') {
+            display: none;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: $gray;
+            width: 18px;
+            height: 26px;
+            mask-repeat: no-repeat;
+            transition: background-color .7s;
+        }
+
+        &--prev {
+            right: 60px;
+
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-left');
+                top: 9px;
+                left: 7px;
+                mask-repeat: no-repeat;
+            }
+        }
+
+        &--next {
+            right: 0;
+
+            &::before {
+                mask-image: url('../images/sprite.svg#icon-right');
+                width: 18px;
+                height: 26px;
+
+                top: 9px;
+                left: 9px;
+                transition: background-color .7s;
+            }
+        }
+
+        &:hover {
+            background-color: rgba($orange-900, 0.1);
+            border-color: rgba($orange-900, 0.7);
+        }
+
+        &:hover::before {
+            background-color: rgba($orange-900, 0.7);
+        }
+
+        &:active {
+            border-color: transparent;
+            outline: transparent;
+        }
+
+        &:active::before {
+            background-color: $orange-900;
+        }
+    }
+
+    &__slide {
+        flex-shrink: 0;
+    }
+
+    &__pagination {
+        display: none;
+
+        @include mq('tablet') {
+            display: inline-block;
+            position: absolute;
+            margin: 0 auto;
+
+            .swiper-pagination-bullet {
+                background-color: $gray;
+                width: 15px;
+                height: 15px;
+
+                &-active {
+                    background-color: $orange-900;
+                }
+            }
+        }
+    }
+
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: none;
+
+        @include mq('tablet') {
+            display: block;
+            width: 75px;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 0;
+        }
+    }
+}

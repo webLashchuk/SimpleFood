@@ -1,0 +1,203 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: $dark;
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    background-color: $silver-100;
+    display: flex;
+    flex-direction: column;
+}
+
+body.lock {
+    @include mq('tablet') {
+        overflow: hidden;
+    }
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.link {
+    transition: outline .7s, color .7s, text-shadow .7s;
+
+
+    &:focus {
+        border-radius: 5px;
+        outline: 2px solid $orange-900;
+    }
+
+    &:hover {
+        color: $orange-900;
+    }
+
+    &:active {
+        color: $darkBlue-900;
+        text-shadow: 2px 2px 5px rgba($darkBlue-900, 0.5);
+        outline: transparent;
+    }
+
+    @include mq('tablet') {
+        outline: transparent;
+    }
+}
+
+.icon {
+    display: inline-block;
+    background-color: $darkBlue-900;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    transition: background-color .7s;
+}
+
+.bg-properties {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    width: 1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding-bottom: 120px;
+
+    @include mq('desktop') {
+
+        padding-bottom: 100px;
+    }
+
+    @include mq('tablet-2') {
+
+        padding-bottom: 60px;
+    }
+
+    @include mq('tablet') {
+
+        padding-bottom: 40px;
+    }
+}
+
+.title,
+.features__caption {
+    font-size: 36px;
+    font-weight: 500;
+    color: $darkBlue-900;
+    text-align: center;
+    margin-bottom: 45px;
+
+    @include mq('tablet') {
+        font-size: 28px;
+    }
+
+    @include mq('phone') {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}
+
+.button {
+    position: relative;
+    color: $primary-white;
+    background-color: $orange-900;
+    border-radius: 6px;
+    transition: background-color .7s, outline .7s, color .7s;
+
+    &:focus {
+        color: $orange-900;
+        background-color: rgba($orange-900, 0.1);
+        outline: 2px solid $orange-900;
+
+        @include mq('tablet') {
+            outline: transparent;
+        }
+    }
+
+    &:focus::before {
+        background-color: $orange-900;
+    }
+
+    &:hover {
+        color: $orange-900;
+        background-color: $primary-white;
+        outline: 2px solid $orange-900;
+    }
+
+    &:hover::before {
+        background-color: $orange-900;
+    }
+
+    &:active {
+        color: $orange-900;
+        background-color: rgba($orange-900, 0.1);
+        outline: transparent;
+    }
+
+    &:active::before {
+        background-color: $orange-900;
+    }
+}
+
+// .hero__link,
+// .food__button {
+//     line-height: 1.5;
+//     color: $darkBlue-900;
+//     text-decoration-line: underline;
+//     text-decoration-thickness: 1px;
+//     text-decoration-skip-ink: none;
+//     text-decoration-color: inherit;
+//     transition: color .5s, outline .5s, text-shadow .5s, text-decoration-color .5s;
+// }
+
+.catalog-bg {
+    background-color: $menu-bg;
+
+    @include mq('tablet') {
+        background-color: $silver-100;
+    }
+}
+
+.overlay {
+    position: fixed;
+    background-color: $black;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity 1s;
+
+    &--active {
+        opacity: 0.5;
+    }
+}
+
+.adaptive-hide {
+    @include mq('tablet') {
+        display: none;
+    }
+}
