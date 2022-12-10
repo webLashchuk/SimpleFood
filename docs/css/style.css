@@ -4883,6 +4883,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
     display: none;
   }
 }
+@media only screen and (max-width: 559px) {
+  .reviews-slider__controls .slick-dots li {
+    display: none;
+  }
+}
 .reviews-slider__controls .slick-dots li:not(:last-child) {
   margin-right: 15px;
 }
@@ -4898,6 +4903,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   -webkit-transition: background-color 0.7s, border-color 0.7s, outline 0.7s;
   -o-transition: background-color 0.7s, border-color 0.7s, outline 0.7s;
   transition: background-color 0.7s, border-color 0.7s, outline 0.7s;
+}
+@media only screen and (max-width: 559px) {
+  .reviews-slider__controls .slick-dots li button {
+    display: none;
+  }
 }
 .reviews-slider__controls .slick-dots li button:hover {
   background-color: rgba(255, 104, 56, 0.1);
