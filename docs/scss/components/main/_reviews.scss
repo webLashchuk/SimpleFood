@@ -94,7 +94,7 @@
             flex-direction: row;
 
             @include mq('phone') {
-                opacity: 0;
+                display: none;
             }
 
             li {
